@@ -4,11 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Fenômeno 50 — Documento Operacional</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0A0A0A}
-::-webkit-scrollbar{display:none}
-</style>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{background:#0A0A0A}::-webkit-scrollbar{display:none}</style>
 </head>
 <body>
 <div id="root"></div>
@@ -1692,7 +1688,7 @@ function ItemRow({
     }
   }, "#", item.id)));
 }
-export default function App() {
+function App() {
   const [view, setView] = useState("expo");
   const [estacao, setEstacao] = useState(null);
   const [atoF, setAtoF] = useState("todos");
