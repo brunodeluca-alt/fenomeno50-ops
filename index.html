@@ -2551,11 +2551,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(
   // fid = id do item no acervo (pra puxar foto real de window.__FOTOS quando existir)
   var PANELS = {
     "painel02": {cor:"#3B82F6", ato:"ATO 1", titulo:"A Origem", pins:[
-      {x:43,y:38,fid:3,t:"Artilheiro Infantil · S. Cristóvão 1991",s:"Antes dos estádios lotados, as primeiras medalhas de um menino de Bento Ribeiro."},
-      {x:59,y:22,fid:2,t:"As medalhas da infância",s:"Copa C.B.I.A., Copa Funabem, Club do Gusi. O talento já gritava."},
-      {x:80,y:23,fid:6,t:"Estreia no Cruzeiro · 1993",s:"58 gols em 60 jogos. Tinha 16 anos. O mundo ainda ia descobrir."},
-      {x:63,y:60,fid:5,t:"O santinho do Zico",s:"Pediu autógrafo na saída do Maracanã. O ídolo parou e assinou. O menino virou Fenômeno."},
-      {x:84,y:68,fid:6,t:"Troféu Fato do Ano 93",s:"Único no mundo. O primeiro grande reconhecimento de uma lenda."}
+      {x:42,y:38,fid:3,t:"Medalha Artilheiro Infantil · S. Cristóvão 1991",s:"As primeiras medalhas de um menino de Bento Ribeiro. Antes dos estádios lotados."},
+      {x:52,y:25,fid:null,t:"Valqueire Tênis Clube · 1987",s:"Aos 11 anos, o teste. A fila da ala estava cheia, a do pivô também. Sobrou a do gol — a menor. Passou como goleiro, virou artilheiro."},
+      {x:62,y:24,fid:2,t:"Artilheiro Infantil · a quadra",s:"Copa C.B.I.A., Copa Funabem, Club do Gusi. O talento já gritava nas quadras."},
+      {x:88,y:25,fid:5,t:"O santinho do Zico",s:"Pediu autógrafo na saída do Maracanã. O ídolo parou e assinou. Anos depois, o menino virou Fenômeno."},
+      {x:85,y:68,fid:6,t:"Troféu Fato do Ano 93 · Cruzeiro",s:"Único no mundo. Coluna espiralada de madeira, feita à mão em Sete Lagoas. O primeiro grande reconhecimento."}
     ]},
     "painel03": {cor:"#22C55E", ato:"ATO 2", titulo:"Ascensão", pins:[
       {x:70,y:22,fid:20,t:"FIFA World Player 1996 + 1997",s:"Dois anos seguidos eleito o melhor do mundo. Aos 20 anos."},
@@ -2563,35 +2563,28 @@ ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(
       {x:74,y:75,fid:63,t:"Inter de Milão",s:"Transferência recorde de US$ 27 milhões. A camisa, a UEFA Cup, a Coppa Italia."}
     ]},
     "painel04": {cor:"#22C55E", ato:"ATO 2", titulo:"A Queda", pins:[
-      {x:12,y:42,fid:25,t:"Prata · Copa do Mundo 1998",s:"A convulsão na véspera da final. Jogou mesmo assim. O mundo nunca entendeu aquela noite em Paris."},
-      {x:36,y:35,fid:80,t:"Nike Mercurial · 1ª lesão",s:"As chuteiras da época em que o joelho parou o Fenômeno. Dois rompimentos. Dois retornos."}
+      {x:30,y:57,fid:25,t:"Medalha de Prata · Copa 1998",s:"A convulsão na véspera da final. Jogou mesmo assim. O mundo nunca entendeu aquela noite em Paris."},
+      {x:34,y:34,fid:80,t:"Nike Mercurial · as chuteiras de 98",s:"A linha que a Nike criou pra ele em 1998 — a chuteira mais rápida já feita. Depois viriam as lesões no joelho."}
     ]},
     "painel05": {cor:"#F59E0B", ato:"ATO 3", titulo:"O Fenômeno", pins:[
-      {x:50,y:17,fid:28,t:"Chuteiras Amarelas · Yokohama 2002",s:"A peça-âncora do acervo. Os dois gols na final contra a Alemanha foram com estas."},
-      {x:58,y:55,fid:31,t:"O Penta · 2002",s:"Voltou dos mortos. 8 gols. Artilheiro. Campeão. O abraço com Felipão correu o mundo."},
-      {x:82,y:25,fid:37,t:"Real Madrid · Galácticos 2003",s:"Com Zidane, Figo, Beckham e Roberto Carlos. Um vestiário cheio de Bolas de Ouro."},
-      {x:92,y:28,fid:43,t:"15 gols em Copas · 2006",s:"Superou Gerd Müller. Maior artilheiro da história das Copas do Mundo."}
+      {x:52,y:18,fid:null,t:"O abraço com Felipão · Yokohama",s:"Ele veio correndo pro banco. Gritou o nome do técnico. Pulou no pescoço. A foto correu o mundo."},
+      {x:38,y:73,fid:null,t:"O Penta · o beijo na taça 2002",s:"Voltou dos mortos. 8 gols. Artilheiro. Campeão. Os dois gols na final contra a Alemanha."},
+      {x:80,y:26,fid:31,t:"FIFA World Player 2002",s:"O terceiro título mundial individual — recorde. Nome RONALDO gravado na base dourada."},
+      {x:91,y:27,fid:null,t:"Real Madrid · 15 gols nas Copas",s:"Galácticos em 2003. Em 2006, superou Gerd Müller: maior artilheiro da história das Copas."}
     ]},
     "painel06": {cor:"#A855F7", ato:"ATO 4", titulo:"O Homem", pins:[
-      {x:65,y:18,fid:null,t:"Lesão no AC Milan · 2008",s:"A terceira lesão grave em dez anos. O mundo achou que era o fim. De novo ele voltou."},
-      {x:74,y:52,fid:32,t:"A Bola de Ouro mais difícil de marcar",s:"Beckham: 'O jogador mais difícil de marcar de todos era o brasileiro. Eu jogava ao lado e ainda parava pra vê-lo jogar.'"},
-      {x:88,y:18,fid:71,t:"Campeão · Corinthians 2009",s:"Voltou pra casa. Campeão aos 32 anos, jogando com o joelho enfaixado."},
-      {x:82,y:42,fid:45,t:"Chuteiras dos filhos",s:"Nike Tiempo com os nomes bordados: Ronald e Maria Sophia. Par único do acervo."}
+      {x:67,y:22,fid:null,t:"Lesão no AC Milan · 2008",s:"A terceira lesão grave em dez anos. O mundo achou que era o fim. De novo ele voltou."},
+      {x:73,y:53,fid:32,t:"A Bola de Ouro mais difícil de marcar",s:"Beckham: 'O jogador mais difícil de marcar de todos era o brasileiro. Eu jogava ao lado e ainda parava pra vê-lo jogar.'"},
+      {x:88,y:22,fid:null,t:"O beijo na conquista",s:"De volta ao Brasil. Campeão jogando com o joelho enfaixado, aos 32 anos."},
+      {x:88,y:47,fid:44,t:"Campeão · Corinthians 2009",s:"Paulistão invicto — façanha não vista desde 1938. Faixa comemorativa em cetim preto e branco."}
     ]},
     "painel07": {cor:"#EC4899", ato:"ATO 5", titulo:"De Volta Pra Casa", pins:[
-      {x:38,y:40,fid:76,t:"Fundação Fenômenos · 2012",s:"+750 mil pessoas alcançadas. +250 lideranças formadas. 'O Ronaldo nunca foi só meu. Ele é do povo.'"},
-      {x:56,y:28,fid:null,t:"Casamento em Ibiza · 2023",s:"Casou com a Celina. A família que ele sempre cuidou, agora celebrando junto."},
+      {x:55,y:72,fid:null,t:"Fundação Fenômenos · 2012",s:"+750 mil pessoas alcançadas. +250 lideranças formadas. 'O Ronaldo nunca foi só meu. Ele é do povo.'"},
+      {x:64,y:32,fid:null,t:"Casamento em Ibiza · 2023",s:"Casou com a Celina. A família que ele sempre cuidou, agora celebrando junto."},
       {x:88,y:30,fid:77,t:"Casa Rede Ronaldo · 2026",s:"Cinquenta anos do menino de Bento Ribeiro. De volta pra casa, em Miami."}
     ]},
     "painel_fachada_hq": {cor:GOLD, ato:"ABERTURA", titulo:"Fenômeno 50 Anos", pins:[]}
   };
-
-  function getFoto(fid){
-    if (!fid) return null;
-    try { var f = window.__FOTOS; if (f && f[fid] && String(f[fid]).indexOf("data:image")===0) return f[fid]; } catch(e){}
-    return null;
-  }
-
   function keyFromSrc(src){
     var f = src.split("/").pop().split("?")[0].replace(".jpg","").replace(".png","");
     return PANELS[f] ? f : null;
