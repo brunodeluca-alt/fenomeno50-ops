@@ -2543,98 +2543,311 @@ function App() {
 ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
 </script>
 
+
+
 <script>
-(function() {
-  // ====== DADOS DOS HOTSPOTS ======
-  // x,y em % da imagem. cor = cor do ATO. label = texto do pin
-  var PINS = {
-    "painel02": {cor:"#3B82F6", pins:[
-      {x:43, y:38, label:"Medalha 2° Artilheiro Infantil\nSão Cristóvão F.C. · 1991"},
-      {x:34, y:25, label:"Valqueire Tênis Clube · 1987\nPrimeiros testes"},
-      {x:59, y:22, label:"Artilheiro Infantil S. Cristóvão\nMedalhas da infância"},
-      {x:80, y:23, label:"Estreia no Cruzeiro · 1993\nTroféu Fato do Ano 93"},
-      {x:63, y:60, label:"Santinho autografado pelo Zico\n★ Peça histórica"},
-      {x:84, y:68, label:"Troféu ÚNICO NO MUNDO\nFato do Ano 93 — Cruzeiro"}
+(function(){
+  if (window.__fenViewer) return;
+  window.__fenViewer = true;
+
+  var GOLD = "#F5C518";
+
+  // ===== CONTEÚDO CURATORIAL POR PAINEL =====
+  var PANELS = {
+    "painel02": {cor:"#3B82F6", ato:"ATO 1", titulo:"A Origem", pins:[
+      {x:43,y:38,t:"Artilheiro Infantil · S. Cristóvão 1991",s:"Antes dos estádios lotados, as primeiras medalhas de um menino de Bento Ribeiro."},
+      {x:59,y:22,t:"As medalhas da infância",s:"Copa C.B.I.A., Copa Funabem, Club do Gusi. O talento já gritava."},
+      {x:80,y:23,t:"Estreia no Cruzeiro · 1993",s:"58 gols em 60 jogos. Tinha 16 anos. O mundo ainda ia descobrir."},
+      {x:63,y:60,t:"O santinho do Zico",s:"Pediu autógrafo na saída do Maracanã. O ídolo parou e assinou. O menino virou Fenômeno."},
+      {x:84,y:68,t:"Troféu Fato do Ano 93",s:"Único no mundo. O primeiro grande reconhecimento de uma lenda."}
     ]},
-    "painel03": {cor:"#22C55E", pins:[
-      {x:70, y:22, label:"FIFA World Player 1996 + 1997\nDois títulos consecutivos"},
-      {x:86, y:19, label:"Ballon d\'Or 1997\nMaleta alumínio original"},
-      {x:74, y:75, label:"Camisa Inter de Milão\nMedalhas UEFA Cup + Coppa Italia"}
+    "painel03": {cor:"#22C55E", ato:"ATO 2", titulo:"Ascensão", pins:[
+      {x:70,y:22,t:"FIFA World Player 1996 + 1997",s:"Dois anos seguidos eleito o melhor do mundo. Aos 20 anos."},
+      {x:86,y:19,t:"Ballon d'Or 1997",s:"Veio na maleta de alumínio original. O mais jovem a conquistar até então."},
+      {x:74,y:75,t:"Inter de Milão",s:"Transferência recorde de US$ 27 milhões. A camisa, a UEFA Cup, a Coppa Italia."}
     ]},
-    "painel04": {cor:"#22C55E", pins:[
-      {x:10, y:42, label:"Medalha Prata Copa 1998\nFinal em Paris · 0×3"},
-      {x:36, y:35, label:"Chuteira Nike Mercurial\nÉpoca da 1ª lesão grave"}
+    "painel04": {cor:"#22C55E", ato:"ATO 2", titulo:"A Queda", pins:[
+      {x:12,y:42,t:"Prata · Copa do Mundo 1998",s:"A convulsão na véspera da final. Jogou mesmo assim. O mundo nunca entendeu aquela noite em Paris."},
+      {x:36,y:35,t:"Nike Mercurial · 1ª lesão",s:"As chuteiras da época em que o joelho parou o Fenômeno. Dois rompimentos. Dois retornos."}
     ]},
-    "painel05": {cor:"#F59E0B", pins:[
-      {x:50, y:17, label:"Chuteiras Nike Amarelas\nFinal Yokohama · 30 jun 2002\n★ PEÇA ÂNCORA"},
-      {x:58, y:55, label:"Medalha Ouro Penta + Ballon d\'Or 2002\nFIFA World Player 2002"},
-      {x:82, y:25, label:"Real Madrid · Supercopa España 2003\nTrofeo EFE + Chuteiras R9"},
-      {x:92, y:28, label:"Chuteira de Bronze Copa 2006\n15 gols — recorde histórico"}
+    "painel05": {cor:"#F59E0B", ato:"ATO 3", titulo:"O Fenômeno", pins:[
+      {x:50,y:17,t:"Chuteiras Amarelas · Yokohama 2002",s:"A peça-âncora do acervo. Os dois gols na final contra a Alemanha foram com estas."},
+      {x:58,y:55,t:"O Penta · 2002",s:"Voltou dos mortos. 8 gols. Artilheiro. Campeão. O abraço com Felipão correu o mundo."},
+      {x:82,y:25,t:"Real Madrid · Galácticos 2003",s:"Com Zidane, Figo, Beckham e Roberto Carlos. Um vestiário cheio de Bolas de Ouro."},
+      {x:92,y:28,t:"15 gols em Copas · 2006",s:"Superou Gerd Müller. Maior artilheiro da história das Copas do Mundo."}
     ]},
-    "painel06": {cor:"#A855F7", pins:[
-      {x:65, y:18, label:"Lesão AC Milan · fev 2008\nTerceira lesão grave em 10 anos"},
-      {x:74, y:52, label:"Ballon d\'Or 2002\nCom Real Madrid"},
-      {x:88, y:18, label:"Campeão Paulistão 2009\nCorinthians invicto · Faixa comemorativa"},
-      {x:82, y:40, label:"Chuteiras personalizadas\nFilhos bordados: Ronald + Maria Sophia\n★ PAR ÚNICO"}
-    ]}
+    "painel06": {cor:"#A855F7", ato:"ATO 4", titulo:"O Homem", pins:[
+      {x:65,y:18,t:"Lesão no AC Milan · 2008",s:"A terceira lesão grave em dez anos. O mundo achou que era o fim. De novo ele voltou."},
+      {x:74,y:52,t:"A Bola de Ouro mais difícil de marcar",s:"Beckham: 'O jogador mais difícil de marcar de todos era o brasileiro. Eu jogava ao lado e ainda parava pra vê-lo jogar.'"},
+      {x:88,y:18,t:"Campeão · Corinthians 2009",s:"Voltou pra casa. Campeão aos 32 anos, jogando com o joelho enfaixado."},
+      {x:82,y:42,t:"Chuteiras dos filhos",s:"Nike Tiempo com os nomes bordados: Ronald e Maria Sophia. Par único do acervo."}
+    ]},
+    "painel07": {cor:"#EC4899", ato:"ATO 5", titulo:"De Volta Pra Casa", pins:[
+      {x:38,y:40,t:"Fundação Fenômenos · 2012",s:"+750 mil pessoas alcançadas. +250 lideranças formadas. 'O Ronaldo nunca foi só meu. Ele é do povo.'"},
+      {x:56,y:28,t:"Casamento em Ibiza · 2023",s:"Casou com a Celina. A família que ele sempre cuidou, agora celebrando junto."},
+      {x:88,y:30,t:"Casa Rede Ronaldo · 2026",s:"Cinquenta anos do menino de Bento Ribeiro. De volta pra casa, em Miami."}
+    ]},
+    "painel_fachada_hq": {cor:GOLD, ato:"ABERTURA", titulo:"Fenômeno 50 Anos", pins:[]}
   };
 
-  var activeTooltip = null;
-
-  function pin(x, y, cor, label) {
-    var d = document.createElement("div");
-    d.style.cssText = "position:absolute;left:"+x+"%;top:"+y+"%;transform:translate(-50%,-50%);width:30px;height:30px;background:"+cor+";border-radius:50%;border:2px solid #000;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 14px rgba(0,0,0,.95);z-index:10;font-size:14px;";
-    d.textContent = "📍";
-    
-    var tip = document.createElement("div");
-    tip.style.cssText = "display:none;position:absolute;left:"+x+"%;top:"+(Math.min(y+8,88))+"%;transform:translateX(-50%);background:#000;border:1px solid "+cor+";border-radius:8px;padding:9px 13px;font-size:11px;color:#fff;z-index:20;max-width:210px;box-shadow:0 4px 18px rgba(0,0,0,.95);font-family:-apple-system,sans-serif;white-space:pre-line;line-height:1.5;pointer-events:none;";
-    tip.textContent = label;
-    
-    d.addEventListener("click", function(e) {
-      e.stopPropagation();
-      if (activeTooltip && activeTooltip !== tip) activeTooltip.style.display = "none";
-      tip.style.display = tip.style.display === "block" ? "none" : "block";
-      activeTooltip = tip.style.display === "block" ? tip : null;
-    });
-    return [d, tip];
+  function keyFromSrc(src){
+    var f = src.split("/").pop().split("?")[0].replace(".jpg","").replace(".png","");
+    return PANELS[f] ? f : null;
   }
 
-  function applyPins() {
-    var imgs = document.querySelectorAll("img[src*=\"brunodeluca-alt.github.io\"]");
-    imgs.forEach(function(img) {
-      if (img.dataset.pinned) return;
-      var fname = img.src.split("/").pop().replace(".jpg","");
-      var config = PINS[fname];
-      if (!config) return;
-      img.dataset.pinned = "1";
+  // ===== INJETAR CTA LIMPO EM CADA PAINEL (modo navegação) =====
+  function enhance(){
+    var imgs = document.querySelectorAll('img[src*="brunodeluca-alt.github.io"]');
+    imgs.forEach(function(img){
+      if (img.dataset.fenDone) return;
+      var key = keyFromSrc(img.src);
+      if (!key) return;
+      img.dataset.fenDone = "1";
+
+      var cfg = PANELS[key];
       var wrap = img.parentElement;
       if (getComputedStyle(wrap).position === "static") wrap.style.position = "relative";
-      // Remover click de zoom no wrapper, mover para a img
-      var oldOnClick = wrap.onclick;
+
+      // remover onClick de zoom nativo do wrapper (vamos usar nosso viewer)
       wrap.onclick = null;
-      img.style.cursor = "zoom-in";
-      img.addEventListener("click", function() { if(oldOnClick) oldOnClick(); });
-      
-      config.pins.forEach(function(p) {
-        var els = pin(p.x, p.y, config.cor, p.label);
-        wrap.appendChild(els[0]);
-        wrap.appendChild(els[1]);
-      });
-      
-      // Fechar tooltips ao clicar fora
-      document.addEventListener("click", function() {
-        if (activeTooltip) { activeTooltip.style.display = "none"; activeTooltip = null; }
-      });
+      img.style.cursor = "pointer";
+
+      // CTA honesto na base do painel
+      var n = cfg.pins.length;
+      var cta = document.createElement("div");
+      cta.style.cssText = "position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.82));display:flex;align-items:center;justify-content:center;gap:8px;pointer-events:none;";
+      var btn = document.createElement("div");
+      btn.style.cssText = "pointer-events:auto;cursor:pointer;display:inline-flex;align-items:center;gap:9px;background:"+cfg.cor+";color:#fff;font-weight:800;font-size:13px;letter-spacing:.2px;padding:11px 18px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.5);font-family:-apple-system,sans-serif;animation:fenPulse 2.4s ease-in-out infinite;";
+      btn.innerHTML = (n>0 ? '<span style="font-size:15px">🔍</span> Explorar '+n+' '+(n===1?'peça':'peças')+' <span style="opacity:.85">→</span>' : '<span style="font-size:15px">⤢</span> Ver em tela cheia');
+      cta.appendChild(btn);
+      wrap.appendChild(cta);
+
+      var open = function(e){ e.stopPropagation(); openViewer(key, img.src); };
+      btn.addEventListener("click", open);
+      img.addEventListener("click", open);
     });
   }
 
-  // Injetar quando o DOM mudar
-  var obs = new MutationObserver(applyPins);
-  obs.observe(document.body, {childList:true, subtree:true});
-  setTimeout(applyPins, 800);
-  setTimeout(applyPins, 2000);
-})();
-</script>
+  // ===== VIEWER IMERSIVO =====
+  var V = null;        // overlay root
+  var stage = null;    // elemento transformado (zoom/pan)
+  var imgEl = null;
+  var scale = 1, tx = 0, ty = 0;
+  var minScale = 1, maxScale = 4;
+  var curKey = null;
+  var pinEls = [];
+  var natW = 0, natH = 0;
 
+  function applyTransform(animate){
+    stage.style.transition = animate ? "transform .42s cubic-bezier(.22,.61,.36,1)" : "none";
+    stage.style.transform = "translate("+tx+"px,"+ty+"px) scale("+scale+")";
+  }
+
+  function clampPan(){
+    var vw = V.clientWidth, vh = stageWrap.clientHeight;
+    var cw = imgEl.clientWidth * scale, ch = imgEl.clientHeight * scale;
+    var maxX = Math.max(0, (cw - vw)/2), maxY = Math.max(0, (ch - vh)/2);
+    tx = Math.max(-maxX, Math.min(maxX, tx));
+    ty = Math.max(-maxY, Math.min(maxY, ty));
+  }
+
+  var stageWrap = null;
+
+  function openViewer(key, src){
+    curKey = key;
+    var cfg = PANELS[key];
+    document.body.style.overflow = "hidden";
+
+    V = document.createElement("div");
+    V.style.cssText = "position:fixed;inset:0;z-index:99999;background:#08080A;display:flex;flex-direction:column;font-family:-apple-system,sans-serif;animation:fenFade .25s ease;";
+
+    // HEADER
+    var head = document.createElement("div");
+    head.style.cssText = "flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:linear-gradient(rgba(0,0,0,.6),transparent);position:relative;z-index:5;";
+    head.innerHTML = '<div><div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:'+cfg.cor+'">'+cfg.ato+'</div><div style="font-size:17px;font-weight:800;color:#fff;margin-top:1px">'+cfg.titulo+'</div></div>';
+    var close = document.createElement("div");
+    close.style.cssText = "cursor:pointer;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;flex-shrink:0;";
+    close.innerHTML = "✕";
+    close.addEventListener("click", closeViewer);
+    head.appendChild(close);
+    V.appendChild(head);
+
+    // STAGE (zoom/pan)
+    stageWrap = document.createElement("div");
+    stageWrap.style.cssText = "flex:1;position:relative;overflow:hidden;touch-action:none;display:flex;align-items:center;justify-content:center;";
+    stage = document.createElement("div");
+    stage.style.cssText = "position:relative;transform-origin:center center;will-change:transform;";
+    imgEl = document.createElement("img");
+    imgEl.src = src;
+    imgEl.style.cssText = "display:block;max-width:100vw;max-height:100%;width:auto;height:auto;-webkit-user-select:none;user-select:none;pointer-events:none;";
+    stage.appendChild(imgEl);
+    stageWrap.appendChild(stage);
+    V.appendChild(stageWrap);
+
+    // dica de gesto
+    var hint = document.createElement("div");
+    hint.style.cssText = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.75);color:#fff;font-size:13px;font-weight:600;padding:10px 16px;border-radius:999px;z-index:6;pointer-events:none;display:flex;align-items:center;gap:8px;animation:fenFade .4s ease;";
+    hint.innerHTML = (cfg.pins.length>0 ? '👆 Toque nos números · pinça pra ampliar' : '🤏 Pinça pra ampliar · arraste pra mover');
+    stageWrap.appendChild(hint);
+    setTimeout(function(){ hint.style.transition="opacity .5s"; hint.style.opacity="0"; setTimeout(function(){ if(hint.parentNode) hint.remove(); }, 500); }, 2600);
+
+    // FILM STRIP (peças)
+    var strip = null;
+    if (cfg.pins.length > 0){
+      strip = document.createElement("div");
+      strip.style.cssText = "flex-shrink:0;display:flex;gap:8px;overflow-x:auto;padding:12px 14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.55));-webkit-overflow-scrolling:touch;scrollbar-width:none;position:relative;z-index:5;";
+      cfg.pins.forEach(function(p, i){
+        var chip = document.createElement("div");
+        chip.dataset.idx = i;
+        chip.style.cssText = "flex-shrink:0;cursor:pointer;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 13px 9px 9px;transition:all .2s;max-width:230px;";
+        chip.innerHTML = '<div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;background:'+cfg.cor+';color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center">'+(i+1)+'</div><div style="font-size:12px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+p.t+'</div>';
+        chip.addEventListener("click", function(){ selectPin(i); });
+        strip.appendChild(chip);
+      });
+      V.appendChild(strip);
+    }
+    V.__strip = strip;
+
+    // CARD (história da peça)
+    var card = document.createElement("div");
+    card.style.cssText = "position:absolute;left:12px;right:12px;bottom:90px;background:#141414;border:1px solid rgba(255,255,255,.1);border-left:3px solid "+cfg.cor+";border-radius:14px;padding:15px 16px;box-shadow:0 12px 40px rgba(0,0,0,.7);z-index:7;transform:translateY(20px);opacity:0;transition:all .3s ease;pointer-events:none;";
+    V.appendChild(card);
+    V.__card = card;
+
+    document.body.appendChild(V);
+
+    // estado inicial
+    scale = 1; tx = 0; ty = 0;
+    imgEl.onload = function(){ natW = imgEl.naturalWidth; natH = imgEl.naturalHeight; buildPins(); applyTransform(false); };
+    if (imgEl.complete) { natW = imgEl.naturalWidth; natH = imgEl.naturalHeight; buildPins(); applyTransform(false); }
+
+    setupGestures();
+  }
+
+  function buildPins(){
+    pinEls.forEach(function(p){ if(p.parentNode) p.remove(); });
+    pinEls = [];
+    var cfg = PANELS[curKey];
+    cfg.pins.forEach(function(p, i){
+      var dot = document.createElement("div");
+      dot.style.cssText = "position:absolute;left:"+p.x+"%;top:"+p.y+"%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:"+cfg.cor+";color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2.5px solid #fff;box-shadow:0 2px 12px rgba(0,0,0,.7);z-index:8;animation:fenPing 2s ease-in-out infinite;";
+      dot.textContent = (i+1);
+      dot.addEventListener("click", function(e){ e.stopPropagation(); selectPin(i); });
+      stage.appendChild(dot);
+      pinEls.push(dot);
+    });
+  }
+
+  function selectPin(i){
+    var cfg = PANELS[curKey];
+    var p = cfg.pins[i];
+
+    // destacar pin ativo, esmaecer os outros (efeito holofote)
+    pinEls.forEach(function(el, j){
+      el.style.animation = "none";
+      el.style.opacity = (j===i) ? "1" : "0.35";
+      el.style.transform = "translate(-50%,-50%) scale("+(j===i?1.25:1)+")";
+      el.style.boxShadow = (j===i) ? "0 0 0 6px "+cfg.cor+"55, 0 2px 12px rgba(0,0,0,.7)" : "0 2px 12px rgba(0,0,0,.7)";
+    });
+    // destacar chip ativo
+    if (V.__strip){
+      Array.prototype.forEach.call(V.__strip.children, function(chip, j){
+        chip.style.background = (j===i) ? cfg.cor+"22" : "rgba(255,255,255,.08)";
+        chip.style.borderColor = (j===i) ? cfg.cor : "rgba(255,255,255,.14)";
+      });
+      var active = V.__strip.children[i];
+      if (active) active.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"});
+    }
+
+    // zoom + pan pra centralizar a peça
+    var z = 2.1;
+    var vw = V.clientWidth, vh = stageWrap.clientHeight;
+    var iw = imgEl.clientWidth, ih = imgEl.clientHeight;
+    // ponto da peça em px relativo ao centro da imagem
+    var px = (p.x/100 - 0.5) * iw;
+    var py = (p.y/100 - 0.5) * ih;
+    scale = z;
+    tx = -px * z;
+    ty = -py * z;
+    clampPan();
+    applyTransform(true);
+
+    // card com a história
+    var card = V.__card;
+    card.innerHTML = '<div style="display:flex;align-items:center;gap:8px;margin-bottom:7px"><div style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:'+cfg.cor+';color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center">'+(i+1)+'</div><div style="font-size:14px;font-weight:800;color:#fff">'+p.t+'</div></div><div style="font-size:13px;line-height:1.55;color:#C8C8C8">'+p.s+'</div>';
+    card.style.transform = "translateY(0)";
+    card.style.opacity = "1";
+  }
+
+  function setupGestures(){
+    var dragging=false, lastX=0, lastY=0;
+    var pinching=false, startDist=0, startScale=1;
+
+    function dist(t){ var dx=t[0].clientX-t[1].clientX, dy=t[0].clientY-t[1].clientY; return Math.hypot(dx,dy); }
+
+    stageWrap.addEventListener("touchstart", function(e){
+      if (e.touches.length===2){ pinching=true; startDist=dist(e.touches); startScale=scale; }
+      else if (e.touches.length===1){ dragging=true; lastX=e.touches[0].clientX; lastY=e.touches[0].clientY; }
+    }, {passive:false});
+
+    stageWrap.addEventListener("touchmove", function(e){
+      e.preventDefault();
+      if (pinching && e.touches.length===2){
+        var d = dist(e.touches);
+        scale = Math.max(minScale, Math.min(maxScale, startScale * (d/startDist)));
+        clampPan(); applyTransform(false);
+      } else if (dragging && e.touches.length===1 && scale>1){
+        var nx=e.touches[0].clientX, ny=e.touches[0].clientY;
+        tx += (nx-lastX); ty += (ny-lastY);
+        lastX=nx; lastY=ny;
+        clampPan(); applyTransform(false);
+      }
+    }, {passive:false});
+
+    stageWrap.addEventListener("touchend", function(e){
+      if (e.touches.length===0){ dragging=false; pinching=false; }
+    });
+
+    // duplo-toque: zoom in/out
+    var lastTap=0;
+    stageWrap.addEventListener("touchend", function(e){
+      var now=Date.now();
+      if (now-lastTap < 300 && e.changedTouches.length){
+        if (scale>1.2){ scale=1; tx=0; ty=0; } else { scale=2.2; }
+        clampPan(); applyTransform(true);
+      }
+      lastTap=now;
+    });
+
+    // desktop: scroll = zoom, drag = pan
+    stageWrap.addEventListener("wheel", function(e){
+      e.preventDefault();
+      scale = Math.max(minScale, Math.min(maxScale, scale - e.deltaY*0.002));
+      clampPan(); applyTransform(false);
+    }, {passive:false});
+    var mDown=false, mx=0, my=0;
+    stageWrap.addEventListener("mousedown", function(e){ if(scale>1){mDown=true;mx=e.clientX;my=e.clientY;} });
+    window.addEventListener("mousemove", function(e){ if(mDown){ tx+=(e.clientX-mx); ty+=(e.clientY-my); mx=e.clientX; my=e.clientY; clampPan(); applyTransform(false);} });
+    window.addEventListener("mouseup", function(){ mDown=false; });
+  }
+
+  function closeViewer(){
+    document.body.style.overflow = "";
+    if (V && V.parentNode) V.remove();
+    V=null; stage=null; imgEl=null; pinEls=[]; scale=1; tx=0; ty=0;
+  }
+
+  // estilos de animação
+  var st = document.createElement("style");
+  st.textContent = "@keyframes fenPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}@keyframes fenPing{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.5),0 2px 12px rgba(0,0,0,.7)}50%{box-shadow:0 0 0 7px rgba(255,255,255,0),0 2px 12px rgba(0,0,0,.7)}}@keyframes fenFade{from{opacity:0}to{opacity:1}}";
+  document.head.appendChild(st);
+
+  var obs = new MutationObserver(enhance);
+  obs.observe(document.body, {childList:true, subtree:true});
+  setTimeout(enhance, 700);
+  setTimeout(enhance, 1800);
+})();
+
+</script>
 </body>
 </html>
