@@ -431,6 +431,27 @@ const PANEL_META={
   painel_enc:{sub:"Em nome de nós, irmãos e irmãs · Ronald, Alex, Maria Alice, Maria Sophia"},
 };
 
+const BASE_PANELS="https://brunodeluca-alt.github.io/fenomeno50-ops/images";
+const PANELS={
+  "painel_fachada":`${BASE_PANELS}/painel_fachada_hq.jpg`,
+  "painel02":`${BASE_PANELS}/painel02.jpg`,
+  "painel03":`${BASE_PANELS}/painel03.jpg`,
+  "painel_2b":`${BASE_PANELS}/painel04.jpg`,
+  "painel_2c":`${BASE_PANELS}/painel05.jpg`,
+  "painel_3a":`${BASE_PANELS}/painel06.jpg`,
+  "painel_3b":`${BASE_PANELS}/painel07.jpg`,
+  "painel_4a":`${BASE_PANELS}/painel_abertura.jpg`,
+};
+const PINS={
+  "painel02":[[3,8,67],[6,50,67],[82,92,67]],
+  "painel03":[[16,8,62],[17,22,62],[18,36,62],[19,50,62],[20,64,62],[52,78,62],[55,92,62],[56,8,75],[57,25,75],[99,42,75],[100,58,75],[101,75,75],[102,92,75]],
+  "painel_2b":[[54,8,62],[58,22,62],[59,36,62],[60,50,62],[61,64,62],[62,78,62],[63,92,62],[64,8,75],[65,25,75],[103,42,75],[104,58,75],[105,75,75],[106,92,75]],
+  "painel_2c":[[14,8,62],[53,25,62],[80,42,62],[83,58,62],[91,75,62],[93,92,62],[94,8,75],[97,25,75],[107,42,75],[108,58,75],[109,75,75],[113,92,75]],
+  "painel_3a":[[31,8,65],[32,25,65],[33,42,65],[34,58,65],[66,75,65],[67,92,65],[88,17,79],[96,42,79],[110,67,79],[111,92,79]],
+  "painel_3b":[[35,30,67],[112,70,67]],
+  "painel_4a":[[37,8,60],[38,19,60],[43,30,60],[68,41,60],[90,52,60],[95,63,60],[98,74,60],[114,85,60],[115,92,60],[116,8,73],[118,22,73],[119,36,73],[120,50,73],[121,64,73],[122,78,73],[123,92,73],[124,50,85]],
+  "painel_5a":[[76,25,67],[77,50,67],[112,75,67],[117,50,80]],
+};
 const ORDEM=["fachada","ato1","ato2","ato3","ato4","ato5","encerramento"];
 
 function Lightbox({src,onClose}){
@@ -495,6 +516,7 @@ export default function App(){
   const [caixaF,setCaixaF]=useState("all");
   const [exp,setExp]=useState(null);
   const [lb,setLb]=useState(null);
+  const [pinPopup,setPinPopup]=useState(null); // itemId
 
   const total=ITEMS.length, temos=ITEMS.filter(i=>i.temos).length;
   const faltam=ITEMS.filter(i=>!i.temos).length, danos=ITEMS.filter(i=>i.ok===false).length;
@@ -521,15 +543,51 @@ export default function App(){
           </div>
         </div>
         <div style={{padding:"0 0 90px"}}>
+          {/* PIN POPUP */}
+          {pinPopup&&(()=>{
+            const pItem=ITEMS.find(i=>i.id===pinPopup);
+            const pFoto=FOTOS[String(pinPopup)];
+            if(!pItem) return null;
+            return(
+              <div onClick={()=>setPinPopup(null)} style={{position:"fixed",inset:0,zIndex:200,background:"rgba(0,0,0,.88)",display:"flex",alignItems:"flex-end",justifyContent:"center",padding:16}}>
+                <div onClick={e=>e.stopPropagation()} style={{background:"#111",borderRadius:16,width:"100%",maxWidth:400,overflow:"hidden",border:"1px solid #2A2A2A"}}>
+                  {pFoto&&<img src={pFoto} style={{width:"100%",maxHeight:280,objectFit:"contain",background:"#000",display:"block"}} />}
+                  <div style={{padding:"14px 16px 20px"}}>
+                    <div style={{fontSize:14,fontWeight:700,color:"#fff",lineHeight:1.4,marginBottom:6}}>{lang==="en"?(pItem.item_en||pItem.item):pItem.item}</div>
+                    <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:12}}>
+                      {pItem.ano&&<span style={{fontSize:11,color:"#F5C518",fontWeight:700}}>{pItem.ano}</span>}
+                      {pItem.imp&&<span style={{fontSize:11,color:"#F5C518"}}>⭐ Destaque</span>}
+                      {pItem.nota&&<span style={{fontSize:11,color:"#888",fontStyle:"italic",lineHeight:1.4}}>{lang==="en"?(pItem.nota_en||pItem.nota):pItem.nota}</span>}
+                    </div>
+                    <button onClick={()=>setPinPopup(null)} style={{width:"100%",padding:"10px",borderRadius:10,background:"#222",border:"1px solid #333",color:"#888",fontSize:13,cursor:"pointer"}}>Fechar</button>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
           {/* PAINÉIS no topo (sequência de artes ou pendente) */}
           {painelKeys.length>0?(
             <div style={{borderBottom:`2px solid ${cor}`}}>
               {painelKeys.map((pk,pi)=>(
-                <div key={pk} onClick={()=>setLb(PANELS[pk])} style={{cursor:"zoom-in",position:"relative",borderBottom:pi<painelKeys.length-1?"1px solid #1A1A1A":"none"}}>
-                  <img src={PANELS[pk]} style={{width:"100%",display:"block"}} />
+                <div key={pk} style={{position:"relative",borderBottom:pi<painelKeys.length-1?"1px solid #1A1A1A":"none"}}>
+                  <img onClick={()=>setLb(PANELS[pk])} src={PANELS[pk]} style={{width:"100%",display:"block",cursor:"zoom-in"}} />
                   <div style={{position:"absolute",top:10,left:10,background:"rgba(0,0,0,.7)",borderRadius:6,padding:"3px 8px",fontSize:10,color:"#22C55E",fontWeight:700}}>✅ {tr.arteFinal}</div>
                   {painelKeys.length>1&&<div style={{position:"absolute",top:10,right:10,background:"rgba(0,0,0,.7)",borderRadius:6,padding:"3px 8px",fontSize:10,color:cor,fontWeight:700}}>{pi+1}/{painelKeys.length}</div>}
                   {PANEL_META[pk]?.sub&&<div style={{position:"absolute",bottom:0,left:0,right:0,background:"linear-gradient(transparent,rgba(0,0,0,.85))",padding:"20px 12px 8px",fontSize:11,color:"#ddd",fontWeight:600}}>{PANEL_META[pk].sub}</div>}
+                  {/* PINS */}
+                  {(PINS[pk]||[]).filter(([id])=>FOTOS[String(id)]).map(([id,x,y])=>(
+                    <div key={id} onClick={()=>setPinPopup(id)}
+                      style={{position:"absolute",left:`${x}%`,top:`${y}%`,transform:"translate(-50%,-50%)",cursor:"pointer",zIndex:10}}
+                      title={ITEMS.find(i=>i.id===id)?.item||""}>
+                      <div style={{
+                        width:14,height:14,borderRadius:"50%",
+                        background:"#F5C518",border:"2px solid #fff",
+                        boxShadow:"0 0 0 0 rgba(245,197,24,.7)",
+                        animation:"pinPulse 1.8s ease-in-out infinite",
+                        animationDelay:`${(id%5)*0.3}s`
+                      }}/>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
@@ -594,7 +652,7 @@ export default function App(){
 
   return(
     <div style={{background:"#0A0A0A",minHeight:"100vh",color:"#fff",fontFamily:"-apple-system,sans-serif"}}>
-      <style>{"*{box-sizing:border-box;margin:0;padding:0}button{border:none;cursor:pointer;font-family:inherit}::-webkit-scrollbar{display:none}"}</style>
+      <style>{"*{box-sizing:border-box;margin:0;padding:0}button{border:none;cursor:pointer;font-family:inherit}::-webkit-scrollbar{display:none}@keyframes pinPulse{0%,100%{box-shadow:0 0 0 0 rgba(245,197,24,.7),0 0 0 0 rgba(245,197,24,.4)}50%{box-shadow:0 0 0 8px rgba(245,197,24,0),0 0 0 4px rgba(245,197,24,.2)}}"}</style>
       <Lightbox src={lb} onClose={()=>setLb(null)}/>
 
       {/* HEADER */}
