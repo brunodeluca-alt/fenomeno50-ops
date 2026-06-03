@@ -38,6 +38,41 @@ const FOTOS={"6":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAGRFS1h
 
 const PANELS={"painel_enc":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel_enc.jpg","painel_5a":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel_5a.jpg","painel_4a":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel_abertura.jpg","painel_3b":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel07.jpg","painel_fachada":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel_fachada_hq.jpg","painel_3a":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel06.jpg","painel_2b":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel04.jpg","painel_2c":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel05.jpg","painel02":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel02.jpg","painel03":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/painel03.jpg"};
 
+
+const FOTOS_HQ={
+  "16":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p16.jpg",
+  "17":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p17.jpg",
+  "20":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p20.jpg",
+  "34":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p34.jpg",
+  "43":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p43.jpg",
+  "99":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p99.jpg",
+  "109":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p109.jpg",
+  "120":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p120.jpg",
+  "123":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p123.jpg",
+  "124":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p124.jpg",
+  "160":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p160.jpg",
+  "161":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p161.jpg",
+  "162":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p162.jpg",
+  "163":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p163.jpg",
+  "164":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p164.jpg",
+  "165":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p165.jpg",
+  "166":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p166.jpg",
+  "167":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p167.jpg",
+  "168":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p168.jpg",
+  "169":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p169.jpg",
+  "170":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p170.jpg",
+  "171":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p171.jpg",
+  "172":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p172.jpg",
+  "173":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p173.jpg",
+  "174":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p174.jpg",
+  "175":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p175.jpg",
+  "176":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p176.jpg",
+  "177":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p177.jpg",
+  "178":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p178.jpg",
+  "179":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p179.jpg",
+  "180":"https://brunodeluca-alt.github.io/fenomeno50-ops/images/p180.jpg"
+};
+
 const ITEMS=[{"id":1,"ano":1990,"ato":"ato1","item":"Medalha Artilheiro — Campeonato Metropolitano","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Top Scorer Medal — Metropolitan Championship"},{"id":2,"ano":1991,"ato":"ato1","item":"Medalha Artilheiro — Copa C.B.I.A.","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Top Scorer Medal — C.B.I.A. Cup"},{"id":3,"ano":1991,"ato":"ato1","item":"Medalha 2° Artilheiro Infantil — São Cristóvão","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"2nd Youth Top Scorer Medal — São Cristóvão"},{"id":4,"ano":1991,"ato":"ato1","item":"Medalha Artilheiro — Copa Funabem","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Top Scorer Medal — Funabem Cup"},{"id":5,"ano":1993,"ato":"ato1","item":"Santinho autografado pelo Zico","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Seu Nélio","imp":true,"item_en":"Prayer card autographed by Zico"},{"id":6,"ano":1993,"ato":"ato1","item":"Troféu 'Fato do Ano 93' — Cruzeiro","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"ÚNICO NO MUNDO","item_en":"'Story of the Year 93' Trophy — Cruzeiro","nota_en":"ONE OF A KIND IN THE WORLD"},{"id":7,"ano":1993,"ato":"ato1","item":"Medalha Recopa Sudamericana — Cruzeiro","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Recopa Sudamericana Medal — Cruzeiro"},{"id":82,"ano":null,"ato":"ato1","item":"Medalha 'Club do Gusi' — Artilheiro (infância)","temos":true,"ok":true,"caixa":null,"col":"Rn","nota":"Inscrição confirmada: Club. do Gusi · Ronaldo · Artilheiro. Medalha dourada circular. Uma das peças mais antigas do acervo.","item_en":"'Club do Gusi' Medal — Top Scorer (childhood)","nota_en":"Tournament to be identified"},{"id":8,"ano":1994,"ato":"ato2","item":"Medalha Ouro Copa do Mundo 1994 — Tetra","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"1994 World Cup Gold Medal — Tetra"},{"id":9,"ano":1994,"ato":"ato2","item":"Credencial Oficial Copa 1994","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Official 1994 World Cup Credential"},{"id":10,"ano":1994,"ato":"ato2","item":"Kit Nike PSV + card ídolo Zico","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Zico","imp":true,"item_en":"Nike PSV kit + Zico idol card"},{"id":11,"ano":1994,"ato":"ato2","item":"Card PSV Eindhoven 1994–95 autografado","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"PSV Eindhoven 1994–95 card, autographed"},{"id":12,"ano":1995,"ato":"ato2","item":"Medalha Copa América 1995 — Prata","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"1995 Copa América Medal — Silver"},{"id":13,"ano":1995,"ato":"ato2","item":"Card PSV Eindhoven 1995–96","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"PSV Eindhoven 1995–96 card"},{"id":14,"ano":1996,"ato":"ato2","item":"Camisa Barcelona Titular 96–97 Kappa — Blaugrana","temos":true,"ok":true,"caixa":null,"col":"G","imp":true,"nota":"⚠ Catalogada como Away — é TITULAR. Conexão: ids 17/19/20","item_en":"Barcelona Home Jersey 96–97 Kappa — Blaugrana","nota_en":"⚠ Catalogued as Away — it is HOME. Linked: ids 17/19/20"},{"id":15,"ano":1996,"ato":"ato2","item":"Medalha Recopa Europeia — Barcelona","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"European Cup Winners' Cup Medal — Barcelona"},{"id":16,"ano":1996,"ato":"ato2","item":"FIFA World Player of the Year 1996","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"FIFA World Player of the Year 1996"},{"id":17,"ano":1997,"ato":"ato2","item":"Chuteira de Ouro Europeia Adidas-ESM 1996–97","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"Troféu Adidas oficial. Placa confirmada: adidas · Ronaldo · Europe 1996/97 · ESM®. Chuteira Adidas Predator dourada sobre base de mármore cinza. Prêmio Adidas ESM (European Sports Media) ao artilheiro europeu da temporada — Ronaldo marcou 47 gols em 49 jogos pelo FC Barcelona.","item_en":"European Golden Boot Adidas-ESM 1996–97","nota_en":"1st edition. Confirm base inscription"},{"id":18,"ano":1997,"ato":"ato2","item":"Réplica UEFA Cup Winners Cup — Barcelona","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"UEFA Cup Winners' Cup Replica — Barcelona"},{"id":19,"ano":1997,"ato":"ato2","item":"Ballon d'Or 1997","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Zico","imp":true,"nota":"Maleta alumínio original","item_en":"Ballon d'Or 1997","nota_en":"Original aluminum case"},{"id":20,"ano":1997,"ato":"ato2","item":"FIFA World Player of the Year 1997","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"FIFA World Player of the Year 1997"},{"id":21,"ano":1997,"ato":"ato2","item":"Medalha Copa América 1997 — Ouro","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"1997 Copa América Medal — Gold"},{"id":22,"ano":1997,"ato":"ato2","item":"Medalha Copa das Confederações 1997","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"1997 Confederations Cup Medal"},{"id":23,"ano":1997,"ato":"ato2","item":"Camisa Inter de Milão emoldurada","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Inter Milan jersey, framed"},{"id":24,"ano":1997,"ato":"ato2","item":"Medalha UEFA Cup — Inter de Milão","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"UEFA Cup Medal — Inter Milan"},{"id":25,"ano":1998,"ato":"ato2","item":"Medalha Prata Copa 1998 — Paris","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Zico","imp":true,"item_en":"1998 World Cup Silver Medal — Paris"},{"id":26,"ano":1999,"ato":"ato2","item":"Medalha Copa América 1999 — Ouro","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"1999 Copa América Medal — Gold"},{"id":27,"ano":2000,"ato":"ato2","item":"Medalha Coppa Italia 1999–2000","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Coppa Italia Medal 1999–2000"},{"id":52,"ano":1994,"ato":"ato2","item":"Troféu Pres Service — Artilheiro Mineiro 1994","temos":true,"ok":true,"caixa":"RR1","col":"Rn","imp":true,"item_en":"Pres Service Trophy — Minas Gerais Top Scorer 1994"},{"id":53,"ano":1994,"ato":"ato2","item":"Atleta do Centenário — Sec. Municipal Esportes","temos":true,"ok":false,"caixa":"RR1","col":"Rn","dano":"Desgaste dourado","item_en":"Athlete of the Centenary — Municipal Sports Dept.","dano_en":"Gold finish worn"},{"id":54,"ano":1995,"ato":"ato2","item":"Nacht der Vedetten — Eindhoven 1995","temos":true,"ok":true,"caixa":"RR1","col":"Rn","item_en":"Nacht der Vedetten — Eindhoven 1995"},{"id":55,"ano":1996,"ato":"ato2","item":"Homenagem Centro de Futebol — Lisboa 1996","temos":true,"ok":true,"caixa":"RR1","col":"Rn","item_en":"Football Center Tribute — Lisbon 1996"},{"id":56,"ano":1996,"ato":"ato2","item":"Club Barça Jove Sport — Los Mejores del 96","temos":true,"ok":true,"caixa":"RR1","col":"Rn","item_en":"Club Barça Jove Sport — Best of '96"},{"id":57,"ano":1996,"ato":"ato2","item":"La Cadena COPE — Mejor Jugador Extranjero 96/97","temos":true,"ok":true,"caixa":"RR3","col":"Rn","imp":true,"item_en":"La Cadena COPE — Best Foreign Player 96/97"},{"id":58,"ano":1997,"ato":"ato2","item":"Brasil World Tour Japan — Nike Japan 1997","temos":true,"ok":true,"caixa":"RR2","col":"Rn","item_en":"Brazil World Tour Japan — Nike Japan 1997"},{"id":59,"ano":1997,"ato":"ato2","item":"千里明杯 97 — Melhor Atleta Mundo (China)","temos":true,"ok":true,"caixa":"RR2","col":"Rn","item_en":"千里明杯 97 — World's Best Athlete (China)"},{"id":60,"ano":1998,"ato":"ato2","item":"UEFA Best Forward 1997/98 — Monaco","temos":true,"ok":false,"caixa":"RR1","col":"Rn","imp":true,"dano":"Disco de vidro solto","item_en":"UEFA Best Forward 1997/98 — Monaco","dano_en":"Glass disc loose"},{"id":61,"ano":1998,"ato":"ato2","item":"UEFA Most Valuable Player 1997/98 — Monaco","temos":true,"ok":false,"caixa":"RR1","col":"Rn","imp":true,"dano":"Disco amarelado","item_en":"UEFA Most Valuable Player 1997/98 — Monaco","dano_en":"Disc yellowed"},{"id":62,"ano":1998,"ato":"ato2","item":"Tuttosport — Placa Comemorativa Edição Nº 1","temos":true,"ok":true,"caixa":"RR1","col":"Rn","item_en":"Tuttosport — Commemorative Plaque Issue No. 1"},{"id":63,"ano":1998,"ato":"ato2","item":"Réplica Coupe UEFA — Inter · Paris 1998","temos":true,"ok":false,"caixa":"RR2","col":"Rn","dano":"Oxidação significativa","item_en":"UEFA Cup Replica — Inter · Paris 1998","dano_en":"Significant oxidation"},{"id":64,"ano":1998,"ato":"ato2","item":"Hall of Fame del Calcio Italiano — FIGC","temos":true,"ok":false,"caixa":"RR2","col":"Rn","imp":true,"dano":"Base separada do corpo","item_en":"Italian Football Hall of Fame — FIGC","dano_en":"Base detached from body"},{"id":65,"ano":1998,"ato":"ato2","item":"Hong Kong City of Life — Cristal comemorativo","temos":true,"ok":true,"caixa":"RR2","col":"Rn","item_en":"Hong Kong City of Life — commemorative crystal"},{"id":78,"ano":1994,"ato":"ato2","item":"Nike Premier Preta — 1ª chuteira Nike (PSV)","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"Black Nike Premier — first Nike boots (PSV)"},{"id":80,"ano":1999,"ato":"ato2","item":"Chuteira Nike Mercurial — época 1ª lesão Inter","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"Confirmar par com id:81","item_en":"Nike Mercurial boots — era of 1st Inter injury","nota_en":"Confirm pair with id:81"},{"id":28,"ano":2002,"ato":"ato3","item":"Chuteiras Nike Mercurial Amarelas — Final Yokohama","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Felipão","imp":true,"nota":"PEÇA ÂNCORA · Coleção Ronaldo · Chuteiras da FINAL 2002 Yokohama (Brasil 2x0 Alemanha). DISTINTAS das chuteiras de Gustavo (id:89 = Copa 2006). São dois momentos curatoriais diferentes: id:28 → ATO 3 (Penta), id:89 → ATO 4 (maior artilheiro Copa).","item_en":"Yellow Nike Mercurial boots — Yokohama Final","nota_en":"ANCHOR PIECE. Original turf + 2006 ticket"},{"id":29,"ano":2002,"ato":"ato3","item":"Medalha Ouro Copa 2002 — Penta","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"2002 World Cup Gold Medal — Penta"},{"id":30,"ano":2002,"ato":"ato3","item":"Réplica FIFA Copa 2002 — exclusiva jogadores","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"2002 World Cup FIFA Replica — players exclusive"},{"id":31,"ano":2002,"ato":"ato3","item":"FIFA World Player 2002 — nome RONALDO gravado","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"FIFA World Player 2002 — RONALDO engraved"},{"id":32,"ano":2002,"ato":"ato3","item":"Ballon d'Or 2002","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"Maleta alumínio original. 2 Ballons d'Or juntos = raríssimo","item_en":"Ballon d'Or 2002","nota_en":"Original aluminum case. 2 Ballons d'Or together = extremely rare"},{"id":33,"ano":2002,"ato":"ato3","item":"Camisa Seleção Brasileira Away Azul Copa 2002","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Brazil National Team Away Jersey, Blue, 2002 World Cup"},{"id":34,"ano":2002,"ato":"ato3","item":"Chuteira de Ouro Copa 2002 — artilheiro 8 gols","temos":true,"ok":false,"caixa":null,"col":"Rn","carta":"Beckham","imp":true,"nota":"Troféu FIFA oficial. Placa confirmada: FIFA World Cup Korea/Japan 2002 Ronaldo. Chuteira Adidas dourada sobre mármore negro. DANO: base com rachaduras, peça tombada.","item_en":"2002 World Cup Golden Boot — top scorer, 8 goals","nota_en":"RECEIVED from Ronald. Plaque: FIFA World Cup Korea/Japan 2002 · Ronaldo. Black marble base.","dano":"Base de mármore com rachaduras. Chuteira tombada — verificar restauração."},{"id":66,"ano":2002,"ato":"ato3","item":"IstoÉ — Brasileiro do Ano 2002","temos":true,"ok":false,"caixa":"RR3","col":"Rn","dano":"Placa solta","item_en":"IstoÉ — Brazilian of the Year 2002","dano_en":"Plaque loose"},{"id":67,"ano":2002,"ato":"ato3","item":"Prêmio Brasil Olímpico 2002 — Hors Concours","temos":true,"ok":true,"caixa":"RR3","col":"Rn","item_en":"Brazil Olympic Award 2002 — Hors Concours"},{"id":79,"ano":2002,"ato":"ato3","item":"Camisa Seleção Titular Amarela Final 2002 — autografada","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"Distinto do id:33 (away azul)","item_en":"Brazil Home Jersey, Yellow, 2002 Final — autographed","nota_en":"Distinct from id:33 (blue away)"},{"id":81,"ano":2002,"ato":"ato3","item":"Chuteira Nike Mercurial Preta — Copa 2002 autografada","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"Confirmar par com id:80","item_en":"Black Nike Mercurial boots — 2002 World Cup, autographed","nota_en":"Confirm pair with id:80"},{"id":35,"ano":2002,"ato":"ato4","item":"Medalha Copa Intercontinental FIFA 2002","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"FIFA Intercontinental Cup Medal 2002"},{"id":36,"ano":2003,"ato":"ato4","item":"Man of the Match — HK vs Real Madrid 2003","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Man of the Match — HK vs Real Madrid 2003"},{"id":37,"ano":2003,"ato":"ato4","item":"Supercopa de España 2003 — Real Madrid","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"Spanish Super Cup 2003 — Real Madrid"},{"id":38,"ano":2003,"ato":"ato4","item":"Trofeo EFE — Melhor Ibero-americano 2002–03","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"item_en":"Trofeo EFE — Best Ibero-American 2002–03"},{"id":40,"ano":2003,"ato":"ato4","item":"Nike R9 Laranja/Preto autografada","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Beckham","imp":true,"item_en":"Nike R9 Orange/Black, autographed"},{"id":41,"ano":2003,"ato":"ato4","item":"Nike R9 Dourada autografada","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Beckham","imp":true,"item_en":"Nike R9 Gold, autographed"},{"id":42,"ano":2003,"ato":"ato4","item":"Nike Mercurial Prata/Azul/Verde autografada","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Nike Mercurial Silver/Blue/Green, autographed"},{"id":43,"ano":2006,"ato":"ato4","item":"Chuteira de Bronze Copa 2006 — recorde 15 gols","temos":true,"ok":null,"caixa":null,"col":"Rn","carta":"Beckham","imp":true,"nota":"Troféu FIFA oficial — Chuteira Adidas Predator em bronze sobre mármore negro. Placa: FIFA World Cup Germany 2006. Ronaldo: 3 gols na Copa, 15 gols no total — recorde histórico quebrando Gerd Müller. Sala Memorabília · PDF #04.","item_en":"2006 World Cup Bronze Boot — record 15 goals","nota_en":"In negotiation"},{"id":44,"ano":2009,"ato":"ato4","item":"Faixa Campeão Paulistão 2009 — Corinthians invicto","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"2009 Paulistão Champion Sash — Corinthians unbeaten"},{"id":45,"ano":2009,"ato":"ato4","item":"Nike Tiempo Legend R9 Preto/Amarelo — filhos bordados","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"PAR ÚNICO — Ronald + Maria Sophia","item_en":"Nike Tiempo Legend R9 Black/Yellow — children's names embroidered","nota_en":"UNIQUE PAIR — Ronald + Maria Sophia"},{"id":46,"ano":2010,"ato":"ato4","item":"Nike Tiempo Legend III Roxo/Laranja — Corinthians","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"PAR ÚNICO — Ronald + Maria Sophia","item_en":"Nike Tiempo Legend III Purple/Orange — Corinthians","nota_en":"UNIQUE PAIR — Ronald + Maria Sophia"},{"id":47,"ano":2009,"ato":"ato4","item":"Conjunto Copa do Brasil emoldurado — Corinthians","temos":true,"ok":true,"caixa":null,"col":"G","item_en":"Copa do Brasil framed set — Corinthians"},{"id":48,"ano":2018,"ato":"ato4","item":"Globe Soccer Awards — Globo de Ouro","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Globe Soccer Awards — Golden Globe"},{"id":49,"ano":2025,"ato":"ato4","item":"Medalha Final Draw Copa 2026 — Washington D.C.","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"2026 World Cup Final Draw Medal — Washington D.C."},{"id":50,"ano":null,"ato":"ato4","item":"Camiseta Seleção Brasileira autografada por Pelé","temos":true,"ok":true,"caixa":null,"col":"Rn","carta":"Beckham","imp":true,"item_en":"Brazil National Team shirt autographed by Pelé"},{"id":68,"ano":2003,"ato":"ato4","item":"Trofeo Pichichi 2003/04 — Real Madrid (24 gols)","temos":true,"ok":false,"caixa":"RR3","col":"Rn","imp":true,"dano":"Oxidação severa","item_en":"Trofeo Pichichi 2003/04 — Real Madrid (24 goals)","dano_en":"Severe oxidation"},{"id":69,"ano":2001,"ato":"ato4","item":"Grand Prix Open Monza — 2nd Team (golfe)","temos":true,"ok":true,"caixa":"av","col":"Rn","item_en":"Grand Prix Open Monza — 2nd Team (golf)"},{"id":70,"ano":2001,"ato":"ato4","item":"Grand Prix Open Monte-Carlo — 1st Putting (golfe)","temos":true,"ok":true,"caixa":"av","col":"Rn","item_en":"Grand Prix Open Monte-Carlo — 1st Putting (golf)"},{"id":71,"ano":2010,"ato":"ato4","item":"Prêmio Craque Brasileirão 2010 — CBF","temos":true,"ok":true,"caixa":"av","col":"Rn","item_en":"Brasileirão Player Award 2010 — CBF"},{"id":72,"ano":null,"ato":"ato4","item":"Bola FIFA Approved — Autógrafos Múltiplos","temos":true,"ok":true,"caixa":"av","col":"Rn","nota":"Identificar autógrafos","item_en":"FIFA Approved Ball — Multiple Autographs","nota_en":"Identify autographs"},{"id":73,"ano":null,"ato":"ato4","item":"Réplica FC Barcelona Campió de Lliga 1991-92","temos":true,"ok":false,"caixa":"av","col":"Rn","dano":"Oxidação","item_en":"FC Barcelona League Champion Replica 1991-92","dano_en":"Oxidation"},{"id":74,"ano":null,"ato":"ato4","item":"Troféu da Concha — espanhol (fã-clube/gala)","temos":true,"ok":true,"caixa":"av","col":"Rn","nota":"NÃO é da infância","item_en":"Trophy of the Shell — Spanish (fan club/gala)","nota_en":"NOT from childhood"},{"id":75,"ano":null,"ato":"ato4","item":"Independiente del Valle — Placa","temos":true,"ok":true,"caixa":"av","col":"Rn","item_en":"Independiente del Valle — Plaque"},{"id":76,"ano":2012,"ato":"ato5","item":"Medida Certa — TV Globo / Fantástico 2012","temos":true,"ok":true,"caixa":null,"col":"Rn","item_en":"Medida Certa — TV Globo / Fantástico 2012"},{"id":77,"ano":2018,"ato":"ato5","item":"BACC Global Goodwill Ambassador — Tiffany & Co.","temos":true,"ok":true,"caixa":"av","col":"Rn","item_en":"BACC Global Goodwill Ambassador — Tiffany & Co."},
 {"id":83,"ano":1996,"ato":"ato2","item":"Camisa Barcelona Away 96-97 — Azul (padrão Barça)","item_en":"Barcelona Away 96-97 — Blue (Barça pattern)","temos":true,"ok":true,"caixa":null,"col":"G","imp":true,"nota":"Away azul escuro com padrão Barça repetido no tecido. Kappa. Coleção Gustavo.","nota_en":"Third kit. Fabric with repeated Barca pattern. Kappa."},
 {"id":84,"ano":2003,"ato":"ato4","item":"Camisa Real Madrid Titular Branca — autografada","item_en":"Real Madrid White Home Jersey — autographed","temos":true,"ok":true,"caixa":null,"col":"G","carta":"Beckham","imp":true,"nota":"Gola azul-acinzentada. Numero 9 tipografia circular. Com autografo.","nota_en":"Blue-grey collar. Circular number 9 font. With autograph."},
@@ -396,6 +431,28 @@ const PANEL_META={
   painel_5a:{sub:"De Volta Pra Casa · Fundação Fenômenos, Valladolid, Cruzeiro, Casa Rede · 2012—2026"},
   painel_enc:{sub:"Em nome de nós, irmãos e irmãs · Ronald, Alex, Maria Alice, Maria Sophia"},
 };
+,{"id":160,"ano":2002,"ato":"ato3","item":"23rd Toyota Cup — MVP 2002","item_en":"23rd Toyota Cup — MVP 2002","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"Prêmio de Melhor Jogador da Copa Toyota / Copa Intercontinental 2002. Real Madrid."}
+,{"id":161,"ano":2002,"ato":"ato3","item":"Trans World Sport — Sportsman of the Year 2002","item_en":"Trans World Sport — Sportsman of the Year 2002","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true}
+,{"id":162,"ano":1997,"ato":"ato2","item":"Oscars du Football — UNFP/FIFPRO/Canal+ — Saison 1996/97","item_en":"Oscars du Football — UNFP/FIFPRO/Canal+ — Season 1996/97","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true,"nota":"Disco de vidro gravado. Premiado em 4 mai 1997."}
+,{"id":163,"ano":1998,"ato":"ato2","item":"Rana d'Oro 1998 — Vercelli","item_en":"Rana d'Oro 1998 — Vercelli","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":164,"ano":1998,"ato":"ato2","item":"Rana d'Oro 1998","item_en":"Rana d'Oro 1998","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":165,"ano":1998,"ato":"ato2","item":"La Gran Noche del Deporte — El Mundo Deportivo","item_en":"La Gran Noche del Deporte — El Mundo Deportivo","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true}
+,{"id":166,"ano":1998,"ato":"ato2","item":"Bravo Sport — Bronzener Sieger der Otto-Wahl 1998","item_en":"Bravo Sport — Bronze Winner Otto Poll 1998","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":167,"ano":1998,"ato":"ato2","item":"Top 11 Sony — Campionato Italiano 1997/98","item_en":"Top 11 Sony — Italian Championship 1997/98","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":168,"ano":2002,"ato":"ato3","item":"Il Migliore in Campo — Teleè — Inter vs Piacenza 2001/02","item_en":"Man of the Match — Teleè — Inter vs Piacenza 2001/02","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":169,"ano":null,"ato":"ato2","item":"Il Migliore in Campo — Teleè — Sem Data","item_en":"Man of the Match — Teleè — Undated","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":170,"ano":1996,"ato":"ato2","item":"Jogador do Ano 1996 — Clube de Torcedores Italianos","item_en":"Player of the Year 1996 — Italian Supporters Club","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":171,"ano":1996,"ato":"ato2","item":"Dn Opkikker — Carnaval de Eindhoven 1996","item_en":"Dn Opkikker — Eindhoven Carnival 1996","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":172,"ano":2004,"ato":"ato4","item":"Prêmio Especial 2004 — Globo Minas","item_en":"Special Award 2004 — Globo Minas","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":173,"ano":2005,"ato":"ato4","item":"Câmara de Comércio Brasil-Espanha — Premio Élite Deportes 2005","item_en":"Brazil-Spain Chamber of Commerce — Elite Sports Award 2005","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":174,"ano":2018,"ato":"ato5","item":"Hall of Fame — FC Internazionale Milano 2018","item_en":"Hall of Fame — FC Internazionale Milano 2018","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true}
+,{"id":175,"ano":2002,"ato":"ato3","item":"Escultura Leão de São Marcos — Prefeitura de Veneza","item_en":"Lion of St. Mark Sculpture — Venice City Hall","temos":true,"ok":true,"caixa":null,"col":"Rn","imp":true}
+,{"id":176,"ano":1997,"ato":"ato2","item":"Placa e Moeda — Inter Club Foligno 1997","item_en":"Plaque and Coin — Inter Club Foligno 1997","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":177,"ano":2014,"ato":"ato5","item":"Prato Kuwait 2014","item_en":"Kuwait Plate 2014","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":178,"ano":2003,"ato":"ato4","item":"Quadro — Sala de Trofeos del Real Madrid","item_en":"Frame — Real Madrid Trophy Room","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":179,"ano":2003,"ato":"ato4","item":"Brasão Entalhado — Ronaldo — Real Madrid","item_en":"Engraved Crest — Ronaldo — Real Madrid","temos":true,"ok":true,"caixa":null,"col":"Rn"}
+,{"id":180,"ano":2004,"ato":"ato4","item":"Adidas Predator Pulse YinYang — David Beckham Ed. Limitada Nº125/723 — 2004","item_en":"Adidas Predator Pulse YinYang — David Beckham Limited Edition No.125/723 — 2004","temos":true,"ok":true,"caixa":null,"col":"G","imp":true,"nota":"Edição limitada numerada. Beckham e Ronaldo foram companheiros no Real Madrid 2003-2007."}
+];
 
 const ORDEM=["fachada","ato1","ato2","ato3","ato4","ato5","encerramento"];
 
@@ -416,7 +473,7 @@ function Badge({children,color,bg}){
 function ItemRow({item,cor,expanded,onToggle,onPhoto,lang,tr}){
   const ausente=!item.temos, dano=item.ok===false;
   const bc=ausente?"#EF4444":dano?"#F97316":cor;
-  const foto=FOTOS[String(item.id)];
+  const foto=FOTOS_HQ[String(item.id)]||FOTOS[String(item.id)];
   return(
     <div onClick={onToggle} style={{background:ausente?"#150505":"#111",borderRadius:10,marginBottom:5,border:`1px solid ${ausente?"#3A1010":"#1A1A1A"}`,borderLeft:`4px solid ${bc}`,cursor:"pointer",overflow:"hidden"}}>
       <div style={{display:"flex",alignItems:"center",padding:"10px 12px",gap:9}}>
@@ -452,7 +509,114 @@ function ItemRow({item,cor,expanded,onToggle,onPhoto,lang,tr}){
   );
 }
 
+
+// ===== PIN VIEW — fullscreen item detail (QR code scan) =====
+function PinView({itemId, isOps}){
+  const item = ITEMS.find(i=>i.id===itemId);
+  const [lang, setLang] = React.useState(()=>navigator.language.startsWith('pt')?'pt':'en');
+  const [danosOpen, setDanosOpen] = React.useState(false);
+  const [danosText, setDanosText] = React.useState('');
+  const foto = FOTOS_HQ[String(itemId)] || FOTOS[String(itemId)];
+  const cor = "#F5C518";
+
+  if(!item) return(
+    <div style={{background:"#000",minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:24,color:"#fff",fontFamily:"-apple-system,sans-serif"}}>
+      <div style={{fontSize:40,marginBottom:12}}>❓</div>
+      <div style={{fontSize:16,color:"#888"}}>Item #{itemId} não encontrado</div>
+      <button onClick={()=>{window.location.hash='';window.location.reload();}} style={{marginTop:24,padding:"10px 24px",background:"#222",border:"1px solid #333",color:"#fff",borderRadius:8,fontSize:14,cursor:"pointer"}}>← Voltar</button>
+    </div>
+  );
+
+  const nome = lang==="en"?(item.item_en||item.item):item.item;
+  const nota = lang==="en"?(item.nota_en||item.nota):item.nota;
+  const dano = lang==="en"?(item.dano_en||item.dano):item.dano;
+  const danoStatus = item.ok===false;
+
+  return(
+    <div style={{background:"#000",minHeight:"100vh",fontFamily:"-apple-system,BlinkMacSystemFont,sans-serif",color:"#fff"}}>
+      {/* Header */}
+      <div style={{background:"#0A0A0A",borderBottom:"1px solid #1A1A1A",padding:"12px 16px",display:"flex",alignItems:"center",gap:12,position:"sticky",top:0,zIndex:10}}>
+        <button onClick={()=>{window.location.hash='';window.location.reload();}} style={{background:"#1A1A1A",border:"none",color:"#fff",width:34,height:34,borderRadius:"50%",fontSize:16,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>←</button>
+        <div style={{fontSize:11,color:"#555",letterSpacing:2,textTransform:"uppercase",flex:1}}>CASA REDE RONALDO · {isOps?"OPS":"MUSEU"}</div>
+        <button onClick={()=>setLang(l=>l==="pt"?"en":"pt")} style={{background:"#1A1A1A",border:"none",color:"#888",padding:"4px 10px",borderRadius:6,fontSize:11,cursor:"pointer"}}>{lang==="pt"?"EN":"PT"}</button>
+      </div>
+
+      {/* Photo */}
+      {foto
+        ?<img src={foto} style={{width:"100%",maxHeight:"55vw",objectFit:"contain",background:"#0A0A0A",display:"block"}} />
+        :<div style={{width:"100%",height:180,background:"#0A0A0A",display:"flex",alignItems:"center",justifyContent:"center",fontSize:40}}>📷</div>
+      }
+
+      {/* Content */}
+      <div style={{padding:"16px 16px 24px"}}>
+        {/* Year badge */}
+        {item.ano&&<div style={{fontSize:11,color:"#555",letterSpacing:2,marginBottom:6}}>{item.ano}</div>}
+
+        {/* Title */}
+        <div style={{fontSize:18,fontWeight:700,color:cor,lineHeight:1.3,marginBottom:12}}>{nome}</div>
+
+        {/* Tags */}
+        <div style={{display:"flex",flexWrap:"wrap",gap:6,marginBottom:16}}>
+          {item.imp&&<span style={{fontSize:10,fontWeight:700,color:"#F5C518",background:"#1A1300",padding:"3px 8px",borderRadius:6}}>⭐ DESTAQUE</span>}
+          {item.col==="Rn"&&<span style={{fontSize:10,color:"#60A5FA",background:"#0A1830",padding:"3px 8px",borderRadius:6,fontWeight:700}}>Acervo Ronald</span>}
+          {item.col==="G"&&<span style={{fontSize:10,color:"#F59E0B",background:"#1A0A00",padding:"3px 8px",borderRadius:6,fontWeight:700}}>Acervo Gustavo</span>}
+          {danoStatus&&<span style={{fontSize:10,color:"#F97316",background:"#2A1000",padding:"3px 8px",borderRadius:6,fontWeight:700}}>⚠ DANO</span>}
+        </div>
+
+        {/* Note */}
+        {nota&&<div style={{fontSize:14,color:"#AAA",lineHeight:1.6,marginBottom:16,borderLeft:"3px solid #333",paddingLeft:12}}>{nota}</div>}
+
+        {/* Damage (ops only) */}
+        {isOps&&danoStatus&&dano&&(
+          <div style={{background:"#1A0800",border:"1px solid #3A1500",borderRadius:8,padding:12,marginBottom:16}}>
+            <div style={{fontSize:11,color:"#F97316",fontWeight:700,letterSpacing:1,marginBottom:4}}>🔧 DANO REGISTRADO</div>
+            <div style={{fontSize:13,color:"#FFB366"}}>{dano}</div>
+          </div>
+        )}
+
+        {/* Report damage (ops only) */}
+        {isOps&&(
+          <div>
+            {!danosOpen
+              ?<button onClick={()=>setDanosOpen(true)} style={{width:"100%",padding:"12px",background:"#1A1A1A",border:"1px solid #2A2A2A",borderRadius:10,color:"#888",fontSize:13,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:8}}>
+                <span>🔧</span> {dano?"Atualizar registro de dano":"Registrar dano"}
+              </button>
+              :<div style={{background:"#0A0A0A",border:"1px solid #2A2A2A",borderRadius:10,padding:12}}>
+                <div style={{fontSize:11,color:"#F97316",fontWeight:700,letterSpacing:1,marginBottom:8}}>🔧 REGISTRO DE DANO</div>
+                <textarea value={danosText} onChange={e=>setDanosText(e.target.value)} placeholder="Descreva o dano observado..." style={{width:"100%",minHeight:80,background:"#111",border:"1px solid #333",borderRadius:6,color:"#fff",padding:8,fontSize:13,resize:"vertical",boxSizing:"border-box"}} />
+                <div style={{display:"flex",gap:8,marginTop:8}}>
+                  <button onClick={()=>setDanosOpen(false)} style={{flex:1,padding:"10px",background:"#1A1A1A",border:"1px solid #333",borderRadius:8,color:"#666",fontSize:12,cursor:"pointer"}}>Cancelar</button>
+                  <button onClick={()=>{alert("Dano registrado: "+danosText+" (item #"+itemId+")");setDanosOpen(false);}} style={{flex:2,padding:"10px",background:"#F97316",border:"none",borderRadius:8,color:"#fff",fontSize:12,fontWeight:700,cursor:"pointer"}}>✓ Registrar</button>
+                </div>
+              </div>
+            }
+          </div>
+        )}
+
+        {/* ID */}
+        <div style={{marginTop:20,fontSize:10,color:"#1A1A1A",textAlign:"right"}}>ID #{item.id} · fenomeno50</div>
+      </div>
+    </div>
+  );
+}
+
 export default function App(){
+
+  // ===== HASH ROUTING — pin/QR code scan =====
+  const [pinItemId, setPinItemId] = React.useState(()=>{
+    const m=window.location.hash.match(/^#item\/([0-9]+)$/);
+    return m?parseInt(m[1]):null;
+  });
+  React.useEffect(()=>{
+    const handler=()=>{
+      const m=window.location.hash.match(/^#item\/([0-9]+)$/);
+      setPinItemId(m?parseInt(m[1]):null);
+    };
+    window.addEventListener('hashchange',handler);
+    return()=>window.removeEventListener('hashchange',handler);
+  },[]);
+  if(pinItemId) return <PinView itemId={pinItemId} isOps={true} />;
+
   const [view,setView]=useState("expo");
   const [lang,setLang]=useState("pt");
   const tr=T[lang];
